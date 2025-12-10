@@ -1,59 +1,191 @@
-# Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-## Development server
+# Job Board Frontend (Angular)
 
-To start a local development server, run:
+A production-ready **job board frontend** built with **Angular**.  
+The application serves candidates, employers, and administrators through a modular, scalable architecture designed for long-term growth.
 
-```bash
+The frontend consumes a RESTful backend and focuses on performance, accessibility, and real-world usability.
+
+---
+
+## Overview
+
+This application provides the user interface for a full-featured recruitment platform, including:
+
+- Candidate registration and profile management
+- Job discovery, search, and filtering
+- Job applications and application tracking
+- Employer dashboards and job posting management
+- Secure authentication and role-based access control
+- Administrative moderation and management
+
+The project is structured to support **rapid feature development** while maintaining **clean separation of concerns**.
+
+---
+
+## Tech Stack
+
+- Angular
+- TypeScript
+- RxJS
+- Angular Router
+- SCSS
+- REST API integration
+- JWT-based authentication
+- Lazy-loaded feature modules
+
+---
+
+## Architecture Principles
+
+- Modular feature-based structure
+- Separation of UI, state, and API access
+- Role-based access guards
+- Reusable shared components
+- Consistent API contracts
+- Production-focused error handling
+
+---
+
+## Project Structure (Simplified)
+
+```
+
+src/
+├── app/
+│   ├── core/
+│   │   ├── auth/
+│   │   ├── guards/
+│   │   ├── interceptors/
+│   │   └── services/
+│   ├── features/
+│   │   ├── auth/
+│   │   ├── jobs/
+│   │   ├── candidates/
+│   │   ├── employers/
+│   │   └── admin/
+│   ├── shared/
+│   │   ├── components/
+│   │   ├── models/
+│   │   └── ui/
+│   ├── app.routes.ts
+│   └── app.component.ts
+└── environments/
+
+```
+
+---
+
+## Authentication & Security
+
+- JWT-based authentication
+- Refresh token handling
+- Role and permission guards
+- Secure route protection
+- Centralised HTTP interceptors
+
+---
+
+## Environment Configuration
+
+Configuration values are managed via Angular environments:
+
+```
+
+src/environments/
+├── environment.ts
+└── environment.prod.ts
+
+````
+
+Example:
+
+```ts
+export const environment = {
+  apiBaseUrl: 'http://localhost:8080/api',
+  production: false
+};
+````
+
+---
+
+## Development Server
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run the development server:
+
+```
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+The app will be available at:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## Build
+
+To create a production build:
+
 ```
-
-## Building
-
-To build the project run:
-
-```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build artifacts are output to the `dist/` directory.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Code Quality
 
-```bash
+* Strict TypeScript configuration
+* Strong typing for API models
+* Centralised error handling
+* Feature isolation via lazy loading
+* Consistent naming conventions
+
+---
+
+## Testing
+
+The application supports:
+
+* Unit tests for components and services
+* Guard and interceptor testing
+* Future expansion to E2E testing
+
+Run unit tests:
+
+```
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Target Use Case
 
-```bash
-ng e2e
-```
+This frontend is designed for **real-world recruitment platforms**, including:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Public job boards
+* Private hiring portals
+* Recruitment agencies
+* Corporate career portals
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Status
+
+**In active development**
+
+Core candidate and employer features are being implemented with production readiness as the primary goal.
+
+---
